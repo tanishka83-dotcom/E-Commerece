@@ -1,7 +1,10 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+
 const authRoutes = require("./routes/authRoutes");
+const productRoutes = require("./routes/productRoutes");
+
 const protect = require("./middleware/authMiddleware");
 
 dotenv.config();
@@ -12,12 +15,18 @@ const app = express();
 
 app.use(express.json());
 
+// Auth Routes
 app.use("/api/auth", authRoutes);
 
+// Product Routes
+app.use("/api/products", productRoutes);
+
+// Home Route
 app.get("/", (req, res) => {
   res.send("API Working");
 });
 
+// Protected Test Route
 app.get("/protected", protect, (req, res) => {
   res.json({
     message: "Protected Route Accessed",
