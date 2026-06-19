@@ -4,6 +4,7 @@ const connectDB = require("./config/db");
 
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 
 const protect = require("./middleware/authMiddleware");
 
@@ -21,6 +22,9 @@ app.use("/api/auth", authRoutes);
 // Product Routes
 app.use("/api/products", productRoutes);
 
+// Cart Routes
+app.use("/api/cart", cartRoutes);
+
 // Home Route
 app.get("/", (req, res) => {
   res.send("API Working");
@@ -30,7 +34,7 @@ app.get("/", (req, res) => {
 app.get("/protected", protect, (req, res) => {
   res.json({
     message: "Protected Route Accessed",
-    user: req.user
+    user: req.user,
   });
 });
 
