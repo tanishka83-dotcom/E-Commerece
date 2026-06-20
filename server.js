@@ -5,7 +5,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const cartRoutes = require("./routes/cartRoutes");
-
+const orderRoutes = require("./routes/orderRoutes");
 const protect = require("./middleware/authMiddleware");
 
 dotenv.config();
@@ -24,7 +24,7 @@ app.use("/api/products", productRoutes);
 
 // Cart Routes
 app.use("/api/cart", cartRoutes);
-
+app.use("/api/orders", orderRoutes);
 // Home Route
 app.get("/", (req, res) => {
   res.send("API Working");
