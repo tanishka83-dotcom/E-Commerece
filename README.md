@@ -1,5 +1,10 @@
 # Tech Gadget Store E-Commerce Backend API
 
+## Contributors
+
+- Nandini Chaurasiya
+- Tanishka Nimbalkar
+
 ## Project Overview
 
 Tech Gadget Store is a RESTful E-Commerce Backend API built using Node.js, Express.js, MongoDB, and JWT Authentication.
