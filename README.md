@@ -164,6 +164,16 @@ npm start
 
 ---
 
+## Features
+
+- User Registration & Login
+- JWT Authentication
+- Product CRUD Operations
+- Cart Management
+- Order Management
+- MongoDB Integration
+- Protected Routes
+  
 ## Testing
 
 All APIs were tested using Postman.
